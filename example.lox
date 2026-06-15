@@ -1,0 +1,9 @@
+service Checklist {
+    operations: [
+        ListTodos
+    ]
+}
+
+operation ListTodos {
+
+}
