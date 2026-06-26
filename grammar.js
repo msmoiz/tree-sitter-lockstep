@@ -40,6 +40,6 @@ export default grammar({
 
     comment: ($) => token(seq("//", /.*/)),
 
-    doc: ($) => token(seq("///", /.*/)),
+    doc: ($) => token(prec(1, seq("///", /.*/))),
   },
 });
