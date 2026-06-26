@@ -15,7 +15,7 @@ export default grammar({
   rules: {
     file: ($) => repeat($._item),
 
-    _item: ($) => choice($.service, $.operation, $.struct),
+    _item: ($) => seq(repeat($.doc), choice($.service, $.operation, $.struct)),
 
     service: ($) =>
       seq(
@@ -39,5 +39,7 @@ export default grammar({
     ident: ($) => /[a-zA-Z][a-zA-Z0-9_]+/,
 
     comment: ($) => token(seq("//", /.*/)),
+
+    doc: ($) => token(seq("///", /.*/)),
   },
 });

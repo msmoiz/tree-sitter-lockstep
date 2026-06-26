@@ -15,6 +15,34 @@
     }
   },
   {
+    "type": "file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "doc",
+          "named": true
+        },
+        {
+          "type": "operation",
+          "named": true
+        },
+        {
+          "type": "service",
+          "named": true
+        },
+        {
+          "type": "struct",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "operation",
     "named": true,
     "fields": {},
@@ -39,30 +67,6 @@
       "types": [
         {
           "type": "ident",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "source_file",
-    "named": true,
-    "root": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "operation",
-          "named": true
-        },
-        {
-          "type": "service",
-          "named": true
-        },
-        {
-          "type": "struct",
           "named": true
         }
       ]
@@ -107,6 +111,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "doc",
+    "named": true
   },
   {
     "type": "ident",
