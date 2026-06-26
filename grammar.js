@@ -13,7 +13,7 @@ export default grammar({
   extras: ($) => [/\s/, $.comment],
 
   rules: {
-    source_file: ($) => repeat($._item),
+    file: ($) => repeat($._item),
 
     _item: ($) => choice($.service, $.operation, $.struct),
 
