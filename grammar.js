@@ -30,7 +30,12 @@ export default grammar({
         "}",
       ),
 
-    operation: ($) => seq("operation", $.ident, "{", "}"),
+    operation: ($) =>
+      seq("operation", $.ident, "{", repeat(choice($.input, $.output)), "}"),
+
+    input: ($) => seq("input", ":", $.type),
+
+    output: ($) => seq("output", ":", $.type),
 
     struct: ($) => seq("struct", $.ident, "{", repeat($.field), "}"),
 
