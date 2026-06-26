@@ -10,6 +10,8 @@
 export default grammar({
   name: "lockstep",
 
+  extras: ($) => [/\s/, $.comment],
+
   rules: {
     source_file: ($) => repeat($._item),
 
@@ -35,5 +37,7 @@ export default grammar({
     field: ($) => seq($.ident, ":", $.ident, optional(",")),
 
     ident: ($) => /[a-zA-Z][a-zA-Z0-9_]+/,
+
+    comment: ($) => token(seq("//", /.*/)),
   },
 });
