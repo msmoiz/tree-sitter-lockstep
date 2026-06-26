@@ -151,7 +151,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "ident"
+          "name": "type"
         },
         {
           "type": "CHOICE",
@@ -168,6 +168,10 @@
       ]
     },
     "ident": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z][a-zA-Z0-9_]+"
+    },
+    "type": {
       "type": "PATTERN",
       "value": "[a-zA-Z][a-zA-Z0-9_]+"
     },

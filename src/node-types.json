@@ -14,6 +14,10 @@
         {
           "type": "ident",
           "named": true
+        },
+        {
+          "type": "type",
+          "named": true
         }
       ]
     }
@@ -45,6 +49,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "ident",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "operation",
@@ -96,6 +105,11 @@
     }
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": ",",
     "named": false
   },
@@ -118,10 +132,6 @@
   },
   {
     "type": "doc",
-    "named": true
-  },
-  {
-    "type": "ident",
     "named": true
   },
   {

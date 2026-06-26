@@ -34,9 +34,11 @@ export default grammar({
 
     struct: ($) => seq("struct", $.ident, "{", repeat($.field), "}"),
 
-    field: ($) => seq(repeat($.doc), $.ident, ":", $.ident, optional(",")),
+    field: ($) => seq(repeat($.doc), $.ident, ":", $.type, optional(",")),
 
     ident: ($) => /[a-zA-Z][a-zA-Z0-9_]+/,
+
+    type: ($) => /[a-zA-Z][a-zA-Z0-9_]+/,
 
     comment: ($) => token(seq("//", /.*/)),
 
