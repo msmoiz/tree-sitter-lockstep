@@ -43,7 +43,8 @@ export default grammar({
 
     ident: ($) => /[a-zA-Z][a-zA-Z0-9_]+/,
 
-    type: ($) => choice($.ident, seq("[", $.ident, "]")),
+    type: ($) =>
+      choice(/[a-zA-Z][a-zA-Z0-9_]+/, seq("[", /[a-zA-Z][a-zA-Z0-9_]+/, "]")),
 
     comment: ($) => token(seq("//", /.*/)),
 

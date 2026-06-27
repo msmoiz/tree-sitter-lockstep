@@ -225,8 +225,8 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "ident"
+          "type": "PATTERN",
+          "value": "[a-zA-Z][a-zA-Z0-9_]+"
         },
         {
           "type": "SEQ",
@@ -236,8 +236,8 @@
               "value": "["
             },
             {
-              "type": "SYMBOL",
-              "name": "ident"
+              "type": "PATTERN",
+              "value": "[a-zA-Z][a-zA-Z0-9_]+"
             },
             {
               "type": "STRING",
