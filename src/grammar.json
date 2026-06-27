@@ -222,8 +222,30 @@
       "value": "[a-zA-Z][a-zA-Z0-9_]+"
     },
     "type": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z][a-zA-Z0-9_]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "ident"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "["
+            },
+            {
+              "type": "SYMBOL",
+              "name": "ident"
+            },
+            {
+              "type": "STRING",
+              "value": "]"
+            }
+          ]
+        }
+      ]
     },
     "comment": {
       "type": "TOKEN",
