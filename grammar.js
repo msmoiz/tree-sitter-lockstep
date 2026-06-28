@@ -25,7 +25,7 @@ export default grammar({
         "operations",
         ":",
         "[",
-        repeat($.type),
+        repeat(seq($.type, optional(","))),
         "]",
         "}",
       ),
