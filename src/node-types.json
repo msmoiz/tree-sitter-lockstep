@@ -119,6 +119,10 @@
         {
           "type": "ident",
           "named": true
+        },
+        {
+          "type": "type",
+          "named": true
         }
       ]
     }

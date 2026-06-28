@@ -69,7 +69,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "ident"
+            "name": "type"
           }
         },
         {
