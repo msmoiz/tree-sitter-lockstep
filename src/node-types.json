@@ -156,6 +156,14 @@
     "named": false
   },
   {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -182,6 +190,10 @@
   },
   {
     "type": "operations",
+    "named": false
+  },
+  {
+    "type": "option",
     "named": false
   },
   {
