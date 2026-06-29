@@ -31,11 +31,19 @@ export default grammar({
       ),
 
     operation: ($) =>
-      seq("operation", $.ident, "{", repeat(choice($.input, $.output)), "}"),
+      seq(
+        "operation",
+        $.ident,
+        "{",
+        repeat(choice($.input, $.output, $.error)),
+        "}",
+      ),
 
     input: ($) => seq("input", ":", $.type),
 
     output: ($) => seq("output", ":", $.type),
+
+    error: ($) => seq("error", ":", $.type),
 
     struct: ($) => seq("struct", $.ident, "{", repeat($.field), "}"),
 

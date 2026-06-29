@@ -1,5 +1,20 @@
 [
   {
+    "type": "error",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "field",
     "named": true,
     "fields": {},
@@ -78,6 +93,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "error",
+          "named": true
+        },
         {
           "type": "ident",
           "named": true
@@ -183,6 +202,10 @@
   {
     "type": "doc",
     "named": true
+  },
+  {
+    "type": "error",
+    "named": false
   },
   {
     "type": "input",
