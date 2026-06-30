@@ -56,6 +56,14 @@ export default grammar({
         /[a-zA-Z][a-zA-Z0-9_]+/,
         seq("[", /[a-zA-Z][a-zA-Z0-9_]+/, "]"),
         seq("option", "<", /[a-zA-Z][a-zA-Z0-9_]+/, ">"),
+        seq(
+          "map",
+          "<",
+          /[a-zA-Z][a-zA-Z0-9_]+/,
+          ",",
+          /[a-zA-Z][a-zA-Z0-9_]+/,
+          ">",
+        ),
       ),
 
     comment: ($) => token(seq("//", /.*/)),
