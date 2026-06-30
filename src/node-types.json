@@ -1,5 +1,24 @@
 [
   {
+    "type": "enum",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "variant",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "error",
     "named": true,
     "fields": {},
@@ -48,6 +67,10 @@
       "types": [
         {
           "type": "doc",
+          "named": true
+        },
+        {
+          "type": "enum",
           "named": true
         },
         {
@@ -171,6 +194,25 @@
     "fields": {}
   },
   {
+    "type": "variant",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "doc",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": ",",
     "named": false
   },
@@ -202,6 +244,10 @@
   {
     "type": "doc",
     "named": true
+  },
+  {
+    "type": "enum",
+    "named": false
   },
   {
     "type": "error",

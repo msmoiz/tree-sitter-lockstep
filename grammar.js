@@ -15,7 +15,8 @@ export default grammar({
   rules: {
     file: ($) => repeat($._item),
 
-    _item: ($) => seq(repeat($.doc), choice($.service, $.operation, $.struct)),
+    _item: ($) =>
+      seq(repeat($.doc), choice($.service, $.operation, $.struct, $.enum)),
 
     service: ($) =>
       seq(
@@ -48,6 +49,10 @@ export default grammar({
     struct: ($) => seq("struct", $.ident, "{", repeat($.field), "}"),
 
     field: ($) => seq(repeat($.doc), $.ident, ":", $.type, optional(",")),
+
+    enum: ($) => seq("enum", $.ident, "{", repeat($.variant), "}"),
+
+    variant: ($) => seq(repeat($.doc), $.ident, optional(",")),
 
     ident: ($) => /[a-zA-Z][a-zA-Z0-9_]+/,
 
