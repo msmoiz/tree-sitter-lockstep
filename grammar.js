@@ -52,7 +52,12 @@ export default grammar({
 
     enum: ($) => seq("enum", $.ident, "{", repeat($.variant), "}"),
 
-    variant: ($) => seq(repeat($.doc), $.ident, optional(",")),
+    variant: ($) =>
+      seq(repeat($.doc), $.ident, optional($.variant_fields), optional(",")),
+
+    variant_fields: ($) => choice($.unnamed_fields),
+
+    unnamed_fields: ($) => seq("(", repeat(seq($.type, optional(","))), ")"),
 
     ident: ($) => /[a-zA-Z][a-zA-Z0-9_]+/,
 

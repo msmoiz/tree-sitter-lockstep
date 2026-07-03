@@ -194,6 +194,21 @@
     "fields": {}
   },
   {
+    "type": "unnamed_fields",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variant",
     "named": true,
     "fields": {},
@@ -208,9 +223,36 @@
         {
           "type": "ident",
           "named": true
+        },
+        {
+          "type": "variant_fields",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "variant_fields",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "unnamed_fields",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
   },
   {
     "type": ",",
