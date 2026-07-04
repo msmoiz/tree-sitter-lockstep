@@ -109,6 +109,21 @@
     }
   },
   {
+    "type": "named_fields",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "operation",
     "named": true,
     "fields": {},
@@ -239,6 +254,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "named_fields",
+          "named": true
+        },
         {
           "type": "unnamed_fields",
           "named": true
