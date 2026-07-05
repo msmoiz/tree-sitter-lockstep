@@ -50,7 +50,8 @@ export default grammar({
 
     field: ($) => seq(repeat($.doc), $.ident, ":", $.type, optional(",")),
 
-    enum: ($) => seq("enum", $.ident, "{", repeat($.variant), "}"),
+    enum: ($) =>
+      seq(repeat($.attr), "enum", $.ident, "{", repeat($.variant), "}"),
 
     variant: ($) =>
       seq(repeat($.doc), $.ident, optional($.variant_fields), optional(",")),
@@ -81,5 +82,20 @@ export default grammar({
     comment: ($) => token(seq("//", /.*/)),
 
     doc: ($) => token(prec(1, seq("///", /.*/))),
+
+    attr: ($) => seq("#", "[", $.meta, "]"),
+
+    meta: ($) => choice($.meta_name, $.meta_name_val, $.meta_list),
+
+    meta_name: ($) => $.ident,
+
+    meta_name_val: ($) => seq($.ident, "=", $.expr),
+
+    meta_list: ($) => seq($.ident, "(", repeat1($.meta), ")"),
+
+    expr: ($) => choice($.expr_str),
+
+    expr_str: ($) =>
+      token(seq('"', repeat(choice(/[^"\\]/, /\\["\\nrt0]/)), '"')),
   },
 });
