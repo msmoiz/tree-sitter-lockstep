@@ -91,7 +91,8 @@ export default grammar({
 
     meta_name_val: ($) => seq($.ident, "=", $.expr),
 
-    meta_list: ($) => seq($.ident, "(", repeat1($.meta), ")"),
+    meta_list: ($) =>
+      seq($.ident, "(", repeat(seq($.meta, optional(","))), ")"),
 
     expr: ($) => choice($.expr_str),
 
