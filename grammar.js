@@ -54,7 +54,7 @@ export default grammar({
       seq(repeat($.attr), "enum", $.ident, "{", repeat($.variant), "}"),
 
     variant: ($) =>
-      seq(repeat($.doc), $.ident, optional($.variant_fields), optional(",")),
+      seq(repeat($.doc), repeat($.attr), $.ident, optional($.variant_fields), optional(",")),
 
     variant_fields: ($) => choice($.named_fields, $.unnamed_fields),
 

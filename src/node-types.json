@@ -342,6 +342,10 @@
       "required": true,
       "types": [
         {
+          "type": "attr",
+          "named": true
+        },
+        {
           "type": "doc",
           "named": true
         },

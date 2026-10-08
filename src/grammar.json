@@ -305,6 +305,13 @@
           }
         },
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "attr"
+          }
+        },
+        {
           "type": "SYMBOL",
           "name": "ident"
         },
